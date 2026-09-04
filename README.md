@@ -41,10 +41,23 @@ When you are initially working on your website, it is very useful to be able to 
 
     On MacOS the commands are:
     ```bash
-    brew install ruby
+    brew install ruby@3.3
     brew install node
     gem install bundler
     ```
+
+    > **Use Ruby 3.3, not the latest.** Plain `brew install ruby` installs Ruby 4.x, which
+    > cannot build this site at all. The `github-pages` gem depends on `commonmarker`, whose
+    > gemspec declares `Ruby >= 2.6, < 4.0`. On Ruby 4 that constraint is unsatisfiable, so
+    > Bundler silently resolves backwards to `github-pages 223`, which hard-pins `liquid 4.0.3`
+    > — and that version calls `String#tainted?`, a method Ruby removed in 3.2. The build then
+    > dies with `undefined method 'tainted?'`. Ruby 3.3 resolves `github-pages 232` /
+    > `jekyll 3.10.0` / `liquid 4.0.4`, which is what GitHub Pages actually runs.
+    >
+    > Homebrew keeps `ruby@3.3` keg-only, so put it on your `PATH` for this project:
+    > ```bash
+    > export PATH="/opt/homebrew/opt/ruby@3.3/bin:$PATH"
+    > ```
 1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
 
     If you see file permission error like `Fetching bundler-2.6.3.gem ERROR:  While executing gem (Gem::FilePermissionError) You don't have write permissions for the /var/lib/gems/3.2.0 directory.` or `Bundler::PermissionError: There was an error while trying to write to /usr/local/bin.`
