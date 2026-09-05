@@ -66,6 +66,16 @@
   }
 }
 
+/* The site title used to occupy the first slot; its width happened to push the rest of
+   the nav clear of the sidebar. It is now a home icon, so that offset has to be stated
+   explicitly: 15.2542% (sidebar width) + 1.6949% (gutter), the same grid columns the
+   sidebar uses. Only applied from $large up, which is where the sidebar sits alongside. */
+.greedy-nav .visible-links {
+  @include breakpoint($large) {
+    padding-left: 16.9491525423%;
+  }
+}
+
 .masthead__menu-item.selected a {
   color: var(--global-text-color);
   font-weight: 700;
