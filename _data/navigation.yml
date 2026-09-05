@@ -8,26 +8,41 @@
 #      Markdown formatted page while the second is generated using JSON.
 
 main:
+  - title: "CV"
+    url: /cv/
+
+  - title: "Projects"
+    url: /projects/
+
   - title: "Publications"
     url: /publications/
 
-  - title: "Talks"
-    url: /talks/    
-
-  - title: "Teaching"
-    url: /teaching/    
-    
-  - title: "Portfolio"
-    url: /portfolio/
-        
   - title: "Blog Posts"
     url: /year-archive/
-    
-  - title: "CV"
-    url: /cv/
-    
+
+  - title: "Photography"
+    url: /photography/
+
+  # ---------------------------------------------------------------------------
+  # Hidden from the header, but NOT deleted. These pages are still built and
+  # still work if you visit their URL directly (e.g. /talks/). To bring one
+  # back into the nav, uncomment its two lines and move it into the list above.
+  # ---------------------------------------------------------------------------
+
+  # The built-in portfolio collection (_portfolio). Unused while the photography
+  # portfolio is hosted externally and linked from /photography/.
+  # - title: "Portfolio"
+  #   url: /portfolio/
+
+  # - title: "Talks"
+  #   url: /talks/
+
+  # - title: "Teaching"
+  #   url: /teaching/
+
+  # - title: "Guide"
+  #   url: /markdown/
+
+  # JSON-generated CV. Use this INSTEAD of the Markdown "CV" above, not alongside it.
   # - title: "CV"
   #   url: /cv-json/
-    
-  - title: "Guide"
-    url: /markdown/

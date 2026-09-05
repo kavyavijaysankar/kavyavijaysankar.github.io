@@ -7,6 +7,13 @@
 html {
   /* apply a natural box layout model to all elements */
   box-sizing: border-box;
+
+  /* Smooth scrolling for in-page anchors (the footer's "Back to top", TOC links).
+     Skipped for anyone who has asked their OS to reduce motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+
   background-color: var(--global-bg-color);
   font-size: 16px;
 

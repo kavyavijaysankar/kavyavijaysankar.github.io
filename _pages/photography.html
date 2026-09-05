@@ -1,0 +1,161 @@
+---
+layout: single
+title: "Photography"
+permalink: /photography/
+author_profile: true
+---
+
+<!--
+  STILL TO EDIT:
+    1. The intro paragraph below.
+    2. The pricing table — the numbers in it are placeholders, not real prices.
+
+  Nothing else needs configuring. The portfolio button uses `author.photography` and the
+  enquiry form sends to `author.email` — both read from _config.yml, so changing them
+  there updates this page and the sidebar together.
+-->
+
+<p>
+  I work as a photographer.
+</p>
+
+<h2>See my work</h2>
+
+<p>
+  My full photography portfolio lives on a separate site, where the galleries are easier
+  to browse:
+</p>
+
+<p>
+  <a href="{{ site.author.photography }}" class="btn" rel="noopener" target="_blank">View the portfolio</a>
+</p>
+
+<h2>Pricing</h2>
+
+<p>
+  [Replace this with how you'd like to frame your rates — what's included, travel policy,
+  turnaround time for edited images, deposit terms.]
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Package</th>
+      <th>Duration</th>
+      <th>Includes</th>
+      <th>From</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Portrait session</td>
+      <td>1 hour</td>
+      <td>1 location, N edited images</td>
+      <td>£XX</td>
+    </tr>
+    <tr>
+      <td>Event</td>
+      <td>Half day</td>
+      <td>Up to N hours, N edited images</td>
+      <td>£XX</td>
+    </tr>
+    <tr>
+      <td>Full day</td>
+      <td>8 hours</td>
+      <td>Multiple locations, full edited gallery</td>
+      <td>£XX</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <em>These are starting prices — the final quote depends on location, travel and how many
+  edited images you need. Ask me for an exact figure.</em>
+</p>
+
+<h2>Enquire about a booking</h2>
+
+<p>
+  Fill this in and press <strong>Prepare email</strong>. It opens your own email app with
+  everything filled in — check it over, then press send. Nothing is submitted to this
+  website, and no third-party service sees your details.
+</p>
+
+<form id="booking-form">
+  <p>
+    <label for="bk-name">Your name <span aria-hidden="true">*</span></label><br>
+    <input type="text" id="bk-name" name="name" required autocomplete="name">
+  </p>
+
+  <p>
+    <label for="bk-type">What kind of shoot? <span aria-hidden="true">*</span></label><br>
+    <select id="bk-type" name="shoot_type" required>
+      <option value="">Please choose…</option>
+      <option>Portrait</option>
+      <option>Event</option>
+      <option>Wedding</option>
+      <option>Product</option>
+      <option>Something else</option>
+    </select>
+  </p>
+
+  <p>
+    <label for="bk-date">Preferred date</label><br>
+    <input type="date" id="bk-date" name="date">
+  </p>
+
+  <p>
+    <label for="bk-location">Location</label><br>
+    <input type="text" id="bk-location" name="location" placeholder="City, venue, or “not sure yet”">
+  </p>
+
+  <p>
+    <label for="bk-details">Anything else I should know?</label><br>
+    <textarea id="bk-details" name="details" rows="5" maxlength="1200"
+              placeholder="How many people, what the occasion is, roughly what you have in mind…"></textarea>
+  </p>
+
+  <p>
+    <button type="submit" class="btn">Prepare email</button>
+  </p>
+</form>
+
+<p class="notice--info">
+  <strong>Nothing happened when you pressed the button?</strong> That means your browser
+  has no email app set up. Just email me directly at
+  <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a> and include the same
+  details.
+</p>
+
+<script>
+  (function () {
+    var form = document.getElementById('booking-form');
+    if (!form) { return; }
+
+    form.addEventListener('submit', function (event) {
+      // Browsers block submit until required fields are valid, so by here they are.
+      event.preventDefault();
+
+      function field(name) {
+        var el = form.elements[name];
+        return el && el.value ? el.value.trim() : '';
+      }
+
+      var shootType = field('shoot_type');
+      var body = [
+        'Name: ' + field('name'),
+        'Shoot type: ' + shootType,
+        'Preferred date: ' + (field('date') || 'flexible'),
+        'Location: ' + (field('location') || 'not specified'),
+        '',
+        'Details:',
+        field('details') || '(none given)'
+      ].join('\n');
+
+      // encodeURIComponent keeps newlines, accents and & characters intact in the mailto URL.
+      window.location.href = 'mailto:{{ site.author.email }}'
+        + '?subject=' + encodeURIComponent('Photography enquiry - ' + shootType)
+        + '&body=' + encodeURIComponent(body);
+    });
+  })();
+</script>

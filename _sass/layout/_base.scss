@@ -16,7 +16,13 @@ body {
 
   margin: 0;
   padding: $masthead-height 0 0;
-  padding-bottom: 9em;
+
+  /* Sticky footer: the page is at least as tall as the viewport, #main grows to fill
+     any leftover space, so .page__footer is pushed to the bottom on short pages while
+     still sitting below the content (and out of sight) on long ones. */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: $global-font-family;
   line-height: 1.5;
 

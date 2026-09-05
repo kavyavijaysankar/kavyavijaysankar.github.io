@@ -5,6 +5,12 @@
 #main {
   @include container;
   @include clearfix;
+  /* Absorbs the leftover vertical space so the footer is pushed to the bottom. */
+  flex: 1 0 auto;
+  /* As a flex item, the auto left/right margins from @include container suppress
+     cross-axis stretching, so #main would otherwise shrink to fit its content and
+     drag the sidebar inward. An explicit width restores the full-width container. */
+  width: 100%;
   margin-top: 2em;
   padding-left: 1em;
   padding-right: 1em;

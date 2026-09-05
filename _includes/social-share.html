@@ -1,17 +1,75 @@
 {% include base_path %}
 
+{%- comment -%}
+  Share buttons. The draft message is built below and is editable by the sharer before
+  they send or post it -- but only on the services that accept prefilled text:
+
+    Prefilled + editable : Messages, WhatsApp, X
+    Link only            : Facebook, LinkedIn, Messenger
+                           (both strip custom text and scrape the page's OG tags instead)
+
+  "Share to app..." uses the browser's native share sheet. It only appears on devices that
+  support it (phones, and some desktop browsers) and is the ONLY way to reach Instagram --
+  Meta publishes no web URL for Instagram DMs or posts. The share sheet also covers
+  LinkedIn DMs, which likewise have no public share URL.
+
+  Messages and Messenger are app protocols: they do nothing on a desktop without a
+  matching app installed. The native share sheet is the fallback there.
+
+  To change the wording of the draft message, edit share_message below.
+{%- endcomment -%}
+
+{% assign share_url = page.url | absolute_url %}
+{% capture share_message %}{{ page.title }} — {{ site.author.name }}{% endcapture %}
+{% assign share_message_with_link = share_message | append: " " | append: share_url %}
+
+{% assign enc_url = share_url | url_encode %}
+{% assign enc_message = share_message | url_encode %}
+{% assign enc_both = share_message_with_link | url_encode %}
+
+{% assign share_label = site.data.ui-text[site.locale].share_on_label | default: "Share on" %}
+
 <section class="page__share">
   {% if site.data.ui-text[site.locale].share_on_label %}
-    <h4 class="page__share-title">{{ site.data.ui-text[site.locale].share_on_label | default: "Share on" }}</h4>
+    <h4 class="page__share-title">{{ share_label }}</h4>
   {% endif %}
 
-  <a href="https://bsky.app/intent/compose?text={{ base_path }}{{ page.url }}" class="btn btn--bluesky" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Bluesky"><i class="fab fa-bluesky" aria-hidden="true"></i><span> Bluesky</span></a>
+  <a href="sms:?&body={{ enc_both }}" class="btn btn--messages" title="{{ share_label }} Messages"><i class="fas fa-comment-sms" aria-hidden="true"></i><span> Messages</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u={{ base_path }}{{ page.url }}" class="btn btn--facebook" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://wa.me/?text={{ enc_both }}" class="btn btn--whatsapp" title="{{ share_label }} WhatsApp" rel="noopener" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i><span> WhatsApp</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ base_path }}{{ page.url }}" class="btn btn--linkedin" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://x.com/intent/post?text={{ enc_message }}&url={{ enc_url }}" class="btn btn--x" title="{{ share_label }} X" rel="noopener" target="_blank"><i class="fab fa-x-twitter" aria-hidden="true"></i><span> X (formerly Twitter)</span></a>
 
-  <a href="https://www.addtoany.com/add_to/mastodon?linkurl={{  base_path | append: page.url | url_encode }}" class="btn btn--mastodon" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Mastodon"><i class="fab fa-mastodon" aria-hidden="true"></i><span> Mastodon</span></a>
+  <a href="fb-messenger://share?link={{ enc_url }}" class="btn btn--messenger" title="{{ share_label }} Messenger"><i class="fab fa-facebook-messenger" aria-hidden="true"></i><span> Messenger</span></a>
 
-  <a href="https://x.com/intent/post?text={{ base_path }}{{ page.url }}" class="btn btn--x" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} X"><i class="fab fa-x-twitter" aria-hidden="true"></i><span> X (formerly Twitter)</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ enc_url }}" class="btn btn--facebook" title="{{ share_label }} Facebook" rel="noopener" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ enc_url }}" class="btn btn--linkedin" title="{{ share_label }} LinkedIn" rel="noopener" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+
+  <button type="button" id="native-share" class="btn" style="display: none;"
+          data-share-title="{{ page.title | escape }}"
+          data-share-text="{{ share_message | escape }}"
+          data-share-url="{{ share_url }}"
+          title="Share to Instagram, LinkedIn DMs and any other installed app"><i class="fas fa-share-nodes" aria-hidden="true"></i><span> Share to app…</span></button>
 </section>
+
+<script>
+  (function () {
+    var button = document.getElementById('native-share');
+    // navigator.share is missing on most desktop browsers, so leave the button hidden there
+    // rather than showing one that does nothing.
+    if (!button || !navigator.share) { return; }
+
+    button.style.display = '';
+
+    button.addEventListener('click', function () {
+      navigator.share({
+        title: button.dataset.shareTitle,
+        text: button.dataset.shareText,
+        url: button.dataset.shareUrl
+      }).catch(function () {
+        // Sharer dismissed the sheet - nothing to do.
+      });
+    });
+  })();
+</script>

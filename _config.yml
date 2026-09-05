@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
+site_theme               : "air" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title                    : "Kavya Vijaysankar"
 title_separator          : "-"
 name                     : &name "Kavya Vijaysankar"
@@ -30,7 +30,7 @@ author:
   location         : # example: "Boston, MA"
   employer         : # example: "Red Brick University"
   uri              : # URL
-  email            : "kavyavijaysankar@gmail.com" # example: "you@example.org"
+  email            : "kavyavijaysankar@gmail.com"
 
   # Academic websites
   academia         : # URL
@@ -38,7 +38,7 @@ author:
   googlescholar    : # URL - e.g. "https://scholar.google.com/citations?user=XXXXXXXX"
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : # URL - e.g. "https://orcid.org/0000-0000-0000-0000"
+  orcid            : "https://orcid.org/0009-0007-6326-4408" # URL
   semantic         : # URL
   ssrn             : # URL
   pubmed           : # URL
@@ -55,6 +55,9 @@ author:
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
+  # photography
+  photography      : "https://sites.google.com/view/kavstudio/portfolio"
+
   # Social media
   artstation       : # Username
   bluesky          : # Username - e.g. "yourname.bsky.social"
@@ -66,7 +69,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "kavyavijaysankar" # Username
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -230,6 +233,9 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /:collection/:path/
   talks:
     output: true
     permalink: /:collection/:path/
@@ -282,6 +288,15 @@ defaults:
       author_profile: true
       share: true
       comment: true
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
   # _talks
   - scope:
       path: ""
