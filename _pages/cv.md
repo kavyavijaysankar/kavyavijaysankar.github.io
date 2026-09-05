@@ -11,9 +11,8 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* M.Sc. in Computational Neuroscience, University of Nottingham, 2026
+* B.Sc. Honours in Psychology, Christ University, 2025
 
 Work experience
 ======

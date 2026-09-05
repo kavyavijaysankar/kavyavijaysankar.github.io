@@ -26,11 +26,11 @@ author:
   avatar           : "profile.png"
   name             : "Kavya Vijaysankar"
   pronouns         : # example: "she/her"
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "Computational Neuroscientist"
   location         : # example: "Boston, MA"
   employer         : # example: "Red Brick University"
   uri              : # URL
-  email            : # example: "you@example.org"
+  email            : "kavyavijaysankar@gmail.com" # example: "you@example.org"
 
   # Academic websites
   academia         : # URL
