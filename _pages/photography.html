@@ -133,7 +133,9 @@ author_profile: true
     if (!form) { return; }
 
     form.addEventListener('submit', function (event) {
-      // Browsers block submit until required fields are valid, so by here they are.
+      /* NOTE: Jekyll's `compress` layout collapses this page onto a single line, so a
+         "//" comment would comment out the rest of the script. Block comments only. */
+      /* Browsers block submit until required fields are valid, so by here they are. */
       event.preventDefault();
 
       function field(name) {
@@ -152,7 +154,7 @@ author_profile: true
         field('details') || '(none given)'
       ].join('\n');
 
-      // encodeURIComponent keeps newlines, accents and & characters intact in the mailto URL.
+      /* encodeURIComponent keeps newlines, accents and & intact in the mailto URL. */
       window.location.href = 'mailto:{{ site.author.email }}'
         + '?subject=' + encodeURIComponent('Photography enquiry - ' + shootType)
         + '&body=' + encodeURIComponent(body);

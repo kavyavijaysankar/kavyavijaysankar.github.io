@@ -56,8 +56,11 @@
 <script>
   (function () {
     var button = document.getElementById('native-share');
-    // navigator.share is missing on most desktop browsers, so leave the button hidden there
-    // rather than showing one that does nothing.
+    /* NOTE: this page is served through Jekyll's `compress` layout, which collapses the
+       whole document onto one line. A "//" comment would therefore comment out the rest
+       of the script, so only block comments are safe in here. */
+    /* navigator.share is absent in some desktop browsers (Firefox), so leave the button
+       hidden there rather than showing one that does nothing. */
     if (!button || !navigator.share) { return; }
 
     button.style.display = '';
@@ -68,7 +71,7 @@
         text: button.dataset.shareText,
         url: button.dataset.shareUrl
       }).catch(function () {
-        // Sharer dismissed the sheet - nothing to do.
+        /* Sharer dismissed the sheet - nothing to do. */
       });
     });
   })();
