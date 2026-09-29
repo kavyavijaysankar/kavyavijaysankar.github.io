@@ -4,6 +4,9 @@ date: 2025-12-13 # YYYY-MM-DD
 excerpt: "Reproduced and analyzed the minimal neural model of binocular rivalry introduced by Wilson (2007), focusing on how mutual inhibition and slow adaptation dynamics give rise to perceptual dominance and alternations."
 collection: projects
 
+# Tags: as many as you like. The Projects page shows the first 3, then "+N".
+tags: ["Non-linear Dynamics", "Ordinary Differential Equations (ODEs)", "Bifurcation & Stability Analysis", "Phase-space Analysis", "XPPAUT"]
+
 # Link buttons at the top of the project page. Leave any blank to hide it.
 github: "https://github.com/kavyavijaysankar/Binocular-Rivalry-and-Rivalry-Memory"
 website: ""

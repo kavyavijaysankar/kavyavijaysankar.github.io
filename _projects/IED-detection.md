@@ -4,6 +4,9 @@ date: 2026-09-17 # YYYY-MM-DD
 excerpt: "Automated detection of IEDs (an epilepsy biomarker) in continuous EEG using functional data analysis."
 collection: projects
 
+# Tags: as many as you like. The Projects page shows the first 3, then "+N".
+tags: ["Signal processing", "EEG analysis", "Functional data analysis", "Event Detection", "Python-MNE"]
+
 # Link buttons at the top of the project page. Leave any blank to hide it.
 github: "https://github.com/kavyavijaysankar/IED_Detection_EEG"
 website: ""
@@ -14,8 +17,10 @@ other_link_label: "Dataset"   # button text for other_link, e.g. "Slides" or "Da
 
 # PDF viewer at the bottom of the page. Put the PDF in /files/ and write its path,
 # e.g. "/files/my-report.pdf". Leave blank for no viewer.
-report: ""
-report_title: ""       # heading above the viewer; defaults to "Report"
+report: "files/IED-Detection.pdf"
+report_title: "Paper"       # heading above the viewer; defaults to "Report"
 ---
 
-This project was for my Master's dissertation at the University of Nottingham.
+This project was for my Master's dissertation at the University of Nottingham. 
+
+IED detection is a 

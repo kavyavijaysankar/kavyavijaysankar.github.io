@@ -6,12 +6,19 @@
 
 <div itemscope itemtype="http://schema.org/Person">
 
+  {% if author.avatar contains "://" %}
+    {% assign avatar_src = author.avatar %}
+  {% else %}
+    {% assign avatar_src = author.avatar | prepend: "/images/" | prepend: base_path %}
+  {% endif %}
   <div class="author__avatar">
-    {% if author.avatar contains "://" %}
-    	<img src="{{ author.avatar }}" alt="{{ author.name }}"  fetchpriority="high" />
-    {% else %}
-    	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}"  fetchpriority="high" />
-    {% endif %}
+    {%- comment -%} Click to enlarge: native popover, no JS. Esc or click outside closes it. {%- endcomment -%}
+    <button type="button" class="author__avatar-button" popovertarget="avatar-full" aria-label="Enlarge profile photo">
+      <img src="{{ avatar_src }}" class="author__avatar" alt="{{ author.name }}" fetchpriority="high" />
+    </button>
+  </div>
+  <div id="avatar-full" class="avatar-popover" popover>
+    <img src="{{ avatar_src }}" alt="{{ author.name }}" />
   </div>
 
   <div class="author__content">

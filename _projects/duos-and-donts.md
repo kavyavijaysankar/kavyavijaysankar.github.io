@@ -4,6 +4,9 @@ date: 2025-07-10 # YYYY-MM-DD
 excerpt: "A 2-player co-operative serious game designed to foster interpersonal and relational skills between players."
 collection: projects
 
+# Tags: as many as you like. The Projects page shows the first 3, then "+N".
+tags: ["Game Development", "Python"]
+
 # Link buttons at the top of the project page. Leave any blank to hide it.
 github: "https://github.com/kavyavijaysankar/Duos-and-Donts"
 website: ""

@@ -1,0 +1,14 @@
+{%- comment -%}
+  Rounded tag pills for projects. Usage:
+    {% include project-tags.html tags=post.tags limit=3 %}   (list: first 3, then "+N")
+    {% include project-tags.html tags=page.tags %}           (project page: all)
+{%- endcomment -%}
+{%- assign t = include.tags -%}
+{%- if t and t.size > 0 -%}
+  {%- assign limit = include.limit | default: t.size -%}
+  <p class="project__tags">
+    {%- for tag in t limit: limit -%}<span class="project__tag">{{ tag }}</span>{%- endfor -%}
+    {%- assign more = t.size | minus: limit -%}
+    {%- if more > 0 -%}<span class="project__tag project__tag--more">+{{ more }}</span>{%- endif -%}
+  </p>
+{%- endif -%}

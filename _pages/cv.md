@@ -35,6 +35,7 @@ Skills
 * MATLAB
 
 </details>
+
 <details class="collapsible" markdown="1">
 <summary><strong>Neural Coding</strong></summary>
 
@@ -43,6 +44,7 @@ Skills
 * Population coding
 
 </details>
+
 <details class="collapsible" markdown="1">
 <summary><strong>EEG Analysis & Signal Processing</strong></summary>
 
@@ -57,6 +59,7 @@ Skills
 * Functional data analysis (FDA)
 
 </details>
+
 <details class="collapsible" markdown="1">
 <summary><strong>Neuroimaging Analysis</strong></summary>
 
@@ -67,6 +70,7 @@ Skills
 * Morphometric analysis
 
 </details>
+
 <details class="collapsible" markdown="1">
 <summary><strong>Dynamic Systems Modelling</strong></summary>
 
@@ -76,6 +80,17 @@ Skills
 * Phase-space analysis
 
 </details>
+
+<details class="collapsible" markdown="1">
+<summary><strong>Stochastic Modelling</strong></summary>
+
+* Markov chains
+* State-space models
+* State estimation
+* Probabilistic modelling
+
+</details>
+
 <details class="collapsible" markdown="1">
 <summary><strong>Machine Learning</strong></summary>
 
@@ -84,6 +99,8 @@ Skills
 * Dimensionality reduction
 * Deep learning 
 * Computer vision
+* Reinforcement learning
+* Markov decision processes
 
 </details>
 
