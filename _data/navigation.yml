@@ -17,9 +17,6 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Blog Posts"
-    url: /year-archive/
-
   - title: "Photography"
     url: /photography/
 
@@ -33,6 +30,10 @@ main:
   # portfolio is hosted externally and linked from /photography/.
   # - title: "Portfolio"
   #   url: /portfolio/
+
+  # Merged into Projects. The blog and its pinned-posts feature still work at this URL.
+  # - title: "Blog Posts"
+  #   url: /year-archive/
 
   # - title: "Talks"
   #   url: /talks/

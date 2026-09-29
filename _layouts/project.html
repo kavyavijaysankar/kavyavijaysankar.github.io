@@ -1,0 +1,37 @@
+---
+layout: single
+---
+{%- comment -%}
+  Project pages. Link buttons and the PDF viewer are driven by front matter in each
+  _projects/*.md file; any field left blank simply doesn't render.
+{%- endcomment -%}
+
+{% assign links = "" | split: "" %}
+{% if page.github != blank %}{% capture l %}<a href="{{ page.github }}" class="btn" rel="noopener" target="_blank"><i class="fab fa-github" aria-hidden="true"></i> Code</a>{% endcapture %}{% assign links = links | push: l %}{% endif %}
+{% if page.website != blank %}{% capture l %}<a href="{{ page.website }}" class="btn" rel="noopener" target="_blank"><i class="fas fa-globe" aria-hidden="true"></i> Website</a>{% endcapture %}{% assign links = links | push: l %}{% endif %}
+{% if page.paper != blank %}{% capture l %}<a href="{{ page.paper }}" class="btn" rel="noopener" target="_blank"><i class="fas fa-file-lines" aria-hidden="true"></i> Paper</a>{% endcapture %}{% assign links = links | push: l %}{% endif %}
+{% if page.video != blank %}{% capture l %}<a href="{{ page.video }}" class="btn" rel="noopener" target="_blank"><i class="fas fa-play" aria-hidden="true"></i> Video</a>{% endcapture %}{% assign links = links | push: l %}{% endif %}
+{% if page.other_link != blank and page.other_link_label != blank %}{% capture l %}<a href="{{ page.other_link }}" class="btn" rel="noopener" target="_blank"><i class="fas fa-link" aria-hidden="true"></i> {{ page.other_link_label }}</a>{% endcapture %}{% assign links = links | push: l %}{% endif %}
+
+{% if links.size > 0 %}
+<p class="project__links">{{ links | join: " " }}</p>
+{% endif %}
+
+{{ content }}
+
+{% if page.report != blank %}
+{% assign report_url = page.report | relative_url %}
+<h2>{{ page.report_title | default: "Report" }}</h2>
+{%- comment -%}
+  ponytail: the browser's built-in PDF viewer, no library. Desktop browsers render it
+  inline; many phones don't, so the buttons below are the fallback. Swap in PDF.js if
+  in-page viewing on mobile ever matters.
+{%- endcomment -%}
+<object class="project__pdf" data="{{ report_url }}" type="application/pdf">
+  <p>Your browser can't display the PDF here. Use the buttons below to open or download it.</p>
+</object>
+<p>
+  <a href="{{ report_url }}" class="btn" rel="noopener" target="_blank"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> Open in new tab</a>
+  <a href="{{ report_url }}" class="btn" download><i class="fas fa-download" aria-hidden="true"></i> Download PDF</a>
+</p>
+{% endif %}

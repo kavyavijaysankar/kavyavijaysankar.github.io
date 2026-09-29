@@ -23,11 +23,11 @@ repository               : "kavyavijaysankar/kavyavijaysankar.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "pfp.jpeg"
   name             : "Kavya Vijaysankar"
   pronouns         : # example: "she/her"
   bio              : "Computational Neuroscientist"
-  location         : # example: "Boston, MA"
+  location         : "Nottingham, UK" # example: "Boston, MA"
   employer         : # example: "Red Brick University"
   uri              : # URL
   email            : "kavyavijaysankar@gmail.com"
@@ -89,6 +89,8 @@ author:
 publication_category:
   books:
     title: 'Books'
+  chapters:
+    title: 'Book Chapters'
   manuscripts:
     title: 'Journal Articles'    
   conferences:
@@ -98,7 +100,7 @@ publication_category:
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
-future                   : true
+future                   : false
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false      #change to true to add link to talkmap on talks page
 comments:
@@ -293,7 +295,7 @@ defaults:
       path: ""
       type: projects
     values:
-      layout: single
+      layout: project
       author_profile: true
       share: true
       comments: true

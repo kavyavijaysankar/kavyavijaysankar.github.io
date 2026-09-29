@@ -16,52 +16,102 @@ Education
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Research Intern - Rogue42 (Summer 2025)
+  * Built a web tool to identify users’ cognitive & behaviour patterns and recommend interventions based on their procrastination profile and cognitive fingerprint.
   
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
-Coursework
-======
-
-
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Talks
+
+
+Skills
 ======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
+<details class="collapsible" markdown="1">
+<summary><strong>Programming</strong></summary>
+
+* Python
+* MATLAB
+
+</details>
+<details class="collapsible" markdown="1">
+<summary><strong>Neural Coding</strong></summary>
+
+* Spike-train analysis
+* Stimulus reconstruction
+* Population coding
+
+</details>
+<details class="collapsible" markdown="1">
+<summary><strong>EEG Analysis & Signal Processing</strong></summary>
+
+* Artefact handling 
+* Filtering 
+* Bad-channel interpolation
+* Time-frequency analysis
+* Source localization
+* Spectral analysis
+* Spatial feature extraction 
+* Biomarker detection 
+* Functional data analysis (FDA)
+
+</details>
+<details class="collapsible" markdown="1">
+<summary><strong>Neuroimaging Analysis</strong></summary>
+
+* FSL
+* Image registration
+* Segmentation
+* Brain extraction, skull & tissue stripping
+* Morphometric analysis
+
+</details>
+<details class="collapsible" markdown="1">
+<summary><strong>Dynamic Systems Modelling</strong></summary>
+
+* Linear & nonlinear dynamics
+* Bifurcation analysis
+* Stability analysis
+* Phase-space analysis
+
+</details>
+<details class="collapsible" markdown="1">
+<summary><strong>Machine Learning</strong></summary>
+
+* Supervised learning
+* Unsupervised learning
+* Dimensionality reduction
+* Deep learning 
+* Computer vision
+
+</details>
+
+Awards
 ======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
+* **Postgraduate Excellence Scholarship Recipient** - University of Nottingham
+
+Relevant Coursework
 ======
-* Currently signed in to 43 different slack teams
+<details class="collapsible" markdown="1">
+<summary><strong>Biomedical Modelling</strong></summary>
+Applied mathematical modelling to biological and medical systems, with a strong focus on dynamical systems, including linear and nonlinear dynamics, stability analysis, bifurcation analysis, and phase-space analysis. Covered ODEs, PDEs, data-driven model fitting, and individual-based models, with applications to cell signalling, tissue dynamics, spatial patterning, and cancer growth.
+</details>
+
+<details class="collapsible" markdown=1>
+<summary><strong>Machine Learning</strong></summary>
+Built a strong mathematical foundation in machine learning, covering supervised, unsupervised, and reinforcement learning, with a focus on regression, classification, density estimation, and generative models.
+</details>
+
+<details class="collapsible" markdown=1>
+<summary><strong>Computer Vision</strong></summary>
+Focused on deep learning approaches for image understanding, including object detection, image segmentation, pose estimation, 3D reconstruction, and motion analysis. Also covered classical image processing and feature-based methods.
+</details>
+
+<details class="collapsible" markdown=1>
+<summary><strong>Neural Computation</strong></summary>
+Studied mathematical and computational models of neurons and neural networks, including biophysical and reduced neuron models, attractor networks, synaptic plasticity, and neural coding. Covered spike-train analysis, population coding, stimulus reconstruction, mutual information, and neural encoding and decoding methods.
+</details>
+
+  
+

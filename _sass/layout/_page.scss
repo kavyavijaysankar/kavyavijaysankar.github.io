@@ -405,3 +405,56 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+/* Collapsible sections (<details class="collapsible">), used on /photography/ and /cv/.
+   Only the summary "button" gets the border; the contents are 2pt smaller. */
+.collapsible {
+  margin-bottom: 0.75em;
+  font-size: calc(1em - 2pt);
+
+  > summary {
+    font-size: calc(1em + 2pt);
+    border: 1px solid var(--global-border-color);
+    border-radius: 4px;
+    padding: 0.5em 0.75em;
+    cursor: pointer;
+  }
+
+  &[open] > summary {
+    margin-bottom: 0.75em;
+  }
+}
+
+/* Headings have no top margin in this theme; the gap above one comes from the element
+   before it. A list leaves 1rem, a collapsible only 0.75em of its smaller text, so a
+   heading straight after a collapsible sat too close. 1rem restores the usual gap. */
+.collapsible + h1,
+.collapsible + h2 {
+  margin-top: 1rem;
+}
+
+/* CV publications (_includes/archive-single-cv.html): each title is an h3 with a 1em top
+   margin, which put a large gap under the "Publications" heading. Drop it for the first
+   entry only; later entries keep it as spacing between publications. */
+ul > .list__item:first-child .archive__item-title { /* ul = CV only; archive pages have no ul */
+  margin-top: 0;
+}
+
+/* Project pages (_layouts/project.html) */
+.project__links .btn {
+  margin: 0 0.4em 0.4em 0;
+}
+
+.project__links .btn,
+.project__pdf + p .btn {
+  text-decoration: none;
+}
+
+.project__pdf {
+  display: block;
+  width: 100%;
+  height: 80vh;
+  border: 1px solid var(--global-border-color);
+  border-radius: 4px;
+  margin-bottom: 1em;
+}

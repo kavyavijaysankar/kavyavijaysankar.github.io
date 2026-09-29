@@ -39,6 +39,11 @@ stop() {
 trap 'echo ""; echo "==> stopping"; stop; exit 0' INT TERM
 
 start
+
+# Wait for Jekyll to bind, then open the browser.
+until curl -s -o /dev/null http://localhost:4000/; do sleep 1; done
+open http://localhost:4000/
+
 stamp=$(stat -f %m _config.yml)
 
 while true; do
