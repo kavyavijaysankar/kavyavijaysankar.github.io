@@ -31,76 +31,84 @@ Skills
 <details class="collapsible" markdown="1">
 <summary><strong>Programming</strong></summary>
 
-* Python
-* MATLAB
+* Python (NumPy, SciPy, pandas, Matplotlib)
+* Machine learning: scikit-learn
+* Neural data: MNE-Python, NiBabel, scikit-fda, fdasrsf
+* MATLAB (Signal Processing Toolbox, Image Processing & Computer Vision Toolbox, EEGLAB)
+* Tools: Git, Jupyter
 
 </details>
 
 <details class="collapsible" markdown="1">
-<summary><strong>Neural Coding</strong></summary>
+<summary><strong>Neural Coding & Decoding</strong></summary>
 
-* Spike-train analysis
-* Stimulus reconstruction
-* Population coding
+* Spike-train analysis (interspike intervals, Fano factor, Poisson models)
+* Stimulus reconstruction from spike trains
+* Linear-Nonlinear-Poisson (LNP) and GLM fitting of neural responses
+* Spike train discrimination and signal detection (ROC analysis)
+* Population decoding (population vector and Bayesian decoders)
+* Fisher information and tuning curve analysis
+* Information-theoretic analysis (entropy, mutual information, redundancy and synergy)
+* Temporal coding and spike synchrony analysis
 
 </details>
 
 <details class="collapsible" markdown="1">
 <summary><strong>EEG Analysis & Signal Processing</strong></summary>
 
-* Artefact handling 
-* Filtering 
-* Bad-channel interpolation
-* Time-frequency analysis
-* Source localization
-* Spectral analysis
+* Filtering, re-referencing, and montage handling (FIR/IIR, band-pass, notch, common average, bipolar)
+* Artefact removal and bad-channel interpolation (ICA, regression, spherical spline interpolation)
+* Spectral and time-frequency analysis (FFT, Morlet and continuous wavelet transforms)
+* Source localisation (eLORETA)
 * Spatial feature extraction 
-* Biomarker detection 
-* Functional data analysis (FDA)
+* EEG Biomarker Detection
+* Functional data analysis
 
 </details>
 
 <details class="collapsible" markdown="1">
 <summary><strong>Neuroimaging Analysis</strong></summary>
 
-* FSL
-* Image registration
-* Segmentation
-* Brain extraction, skull & tissue stripping
-* Morphometric analysis
+* Structural MRI preprocessing with FSL (BET, FAST, FLIRT)
+* Brain extraction and tissue segmentation
+* Image registration to standard space
+* Morphometric analysis (volumetry, cortical thickness)
+* MRI data handling in Python
 
 </details>
 
 <details class="collapsible" markdown="1">
 <summary><strong>Dynamic Systems Modelling</strong></summary>
 
-* Linear & nonlinear dynamics
+* Linear and nonlinear dynamics (ODE, PDE, DDE systems)
+* Stability and phase-plane analysis (fixed points, nullclines, limit cycles)
 * Bifurcation analysis
-* Stability analysis
-* Phase-space analysis
+* Numerical simulation and parameter estimation
+* Neural models of state transitions (Hodgkin-Huxley, integrate-and-fire, rate models)
 
 </details>
 
 <details class="collapsible" markdown="1">
 <summary><strong>Stochastic Modelling</strong></summary>
 
-* Markov chains
-* State-space models
-* State estimation
-* Probabilistic modelling
+* Markov chains and hidden Markov models
+* State-space models and state estimation (Kalman filtering)
+* Point process models of spiking (Poisson, renewal processes)
+* Stochastic differential equations and noise-driven dynamics
+* Bayesian inference and probabilistic modelling
 
 </details>
 
 <details class="collapsible" markdown="1">
 <summary><strong>Machine Learning</strong></summary>
 
-* Supervised learning
-* Unsupervised learning
-* Dimensionality reduction
-* Deep learning 
-* Computer vision
-* Reinforcement learning
-* Markov decision processes
+* Supervised learning (regression, random forests, XGBoost, SVMs)
+* Unsupervised learning and clustering
+* Dimensionality reduction (PCA, ICA)
+* Deep learning (CNNs)
+* Computer vision (semantic segmentation, stereo vision, pose estimation)
+* Reinforcement learning and Markov decision processes
+* Model evaluation for imbalanced data
 
 </details>
 
@@ -129,6 +137,3 @@ Focused on deep learning approaches for image understanding, including object de
 <summary><strong>Neural Computation</strong></summary>
 Studied mathematical and computational models of neurons and neural networks, including biophysical and reduced neuron models, attractor networks, synaptic plasticity, and neural coding. Covered spike-train analysis, population coding, stimulus reconstruction, mutual information, and neural encoding and decoding methods.
 </details>
-
-  
-

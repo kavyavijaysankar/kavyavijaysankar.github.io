@@ -14,12 +14,11 @@ redirect_from:
 I'm a Computational Neuroscientist from the University of Nottingham. I'm currently seeking roles in neurotechnology, BCI, precision medicine, epilepsy research and related fields. 
 
 ### Open to Work
-I am primarily looking for roles in the **United States**. I have work authorization and will **not** need future sponsorship. I am also open to working in the UK (I have work authorization currently but will require sponsorship after 2 years).
+I am primarily looking for roles in the **United States**. I have work authorization and will **not** need future sponsorship. I am also open to working in the UK (I have work authorization currently but will require sponsorship after 2 years), and India (I have work authorization).
 
 ## Research Interests
-
-- Electrophysiological data analysis
-- EEG Biomarker Detection
-- Neuroimaging analysis
-- Dynamic systems modelling for neural state transitions
+- EEG Analysis & Biomarker Detection
+- Neuroimaging Analysis
+- Neural Coding & Decoding
+- Dynamic Systems Modelling for Neural State Transitions
 
