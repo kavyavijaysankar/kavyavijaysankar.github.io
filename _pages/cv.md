@@ -73,7 +73,6 @@ Skills
 * Brain extraction and tissue segmentation
 * Image registration to standard space
 * Morphometric analysis (volumetry, cortical thickness)
-* MRI data handling in Python
 
 </details>
 
@@ -88,7 +87,7 @@ Skills
 
 </details>
 
-<details class="collapsible" markdown="1">
+<!-- <details class="collapsible" markdown="1">
 <summary><strong>Stochastic Modelling</strong></summary>
 
 * Markov chains and hidden Markov models
@@ -97,7 +96,7 @@ Skills
 * Stochastic differential equations and noise-driven dynamics
 * Bayesian inference and probabilistic modelling
 
-</details>
+</details> -->
 
 <details class="collapsible" markdown="1">
 <summary><strong>Machine Learning</strong></summary>
@@ -108,7 +107,7 @@ Skills
 * Deep learning (CNNs)
 * Computer vision (semantic segmentation, stereo vision, pose estimation)
 * Reinforcement learning and Markov decision processes
-* Model evaluation for imbalanced data
+* Model evaluation & validation for imbalanced, noisy, incomplete, small datasets
 
 </details>
 
