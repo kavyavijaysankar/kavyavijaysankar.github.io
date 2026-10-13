@@ -480,3 +480,57 @@ ul > .list__item:first-child .archive__item-title { /* ul = CV only; archive pag
 .project__tag--more {
   font-weight: bold;
 }
+
+/* Photography packages (_pages/photography.html): price-first columns with dividers */
+.packages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  margin: 1em 0;
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.package {
+  padding: 0.5em 1em;
+
+  & + & {
+    border-left: 1px solid var(--global-border-color);
+
+    @media (max-width: 500px) {
+      border-left: 0;
+      border-top: 1px solid var(--global-border-color);
+    }
+  }
+}
+
+.package__name {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: $type-size-7;
+  font-weight: bold;
+  color: var(--global-text-color-light);
+}
+
+.package__price {
+  font-size: 1.9em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0.15em 0;
+}
+
+.package__onwards {
+  font-size: $type-size-7;
+  color: var(--global-text-color-light);
+}
+
+.package__detail {
+  font-size: $type-size-6;
+  margin-top: 0.3em;
+}
+
+.packages__note {
+  text-align: center;
+}
