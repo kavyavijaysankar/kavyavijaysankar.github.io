@@ -136,3 +136,17 @@ Focused on deep learning approaches for image understanding, including object de
 <summary><strong>Neural Computation</strong></summary>
 Studied mathematical and computational models of neurons and neural networks, including biophysical and reduced neuron models, attractor networks, synaptic plasticity, and neural coding. Covered spike-train analysis, population coding, stimulus reconstruction, mutual information, and neural encoding and decoding methods.
 </details>
+
+Volunteering
+======
+* PHAB Nottingham, 2025
+  * Volunteered at PHAB Nottingham, participating in group activities and outings with children and young people with disabilities.
+
+* Visiting Teacher at Ekalavya School, 2023
+  * Taught basic computer applications to students from economically disadvantaged backgrounds at Ekalavya School.
+
+* Ashadeep Old Age Home, 2023
+  * Conducted wellness sessions for senior citizens - yoga, meditation, and relaxation exercises to support physical and mental well-being.
+
+* Treda Rehabilitation Centre, 2023
+  * Conducted activity sessions for adults in the de-addiction programme to promote physical movement, mental engagement, and cognitive stimulation.
