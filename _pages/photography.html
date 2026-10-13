@@ -6,63 +6,54 @@ author_profile: true
 ---
 
 <p>
-  I do landscape, nature, portrait and event photography.
-</p>
-
-<h2>See my work</h2>
-
-<p>
-  My full photography portfolio lives on a separate site:
+  I've been into photography since I was in my early teens. I do landscapes, nature, portraits and events. 
 </p>
 
 <p>
+  My full photography portfolio lives on a separate site: <br>
   <a href="{{ site.author.photography }}" class="btn" rel="noopener" target="_blank">View my portfolio</a>
 </p>
 
-<h2>Pricing</h2>
+<h2>Photoshoots</h2>
 
 <p>
-  Contact me for a quote. I can do anything from a short portrait session to a full-day event. Here are some starting prices:
+  I do photoshoots and offer a range of packages. I can do anything from a short portrait session to a full-day event.
 </p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Package</th>
-      <th>Duration</th>
-      <th>Includes</th>
-      <th>From</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Mini session</td>
-      <td>1 hour</td>
-      <td>1 location, 10 edited images</td>
-      <td>£75</td>
-    </tr>
-    <tr>
-      <td>Full Session</td>
-      <td>3 hours</td>
-      <td>1-2 locations, 20 edited images</td>
-      <td>£180</td>
-    </tr>
-    <tr>
-      <td>Extended Session</td>
-      <td>Upto 8 hours</td>
-      <td>Multiple locations, 50 edited images</td>
-      <td>£350 onwards</td>
-    </tr>
-  </tbody>
-</table>
+<div class="packages">
+  <div class="package">
+    <div class="package__name">Mini</div>
+    <div class="package__price">$85</div>
+    <div class="package__onwards">onwards</div>
+    <div class="package__detail">8 edited images</div>
+  </div>
+  <div class="package">
+    <div class="package__name">Full</div>
+    <div class="package__price">$175</div>
+    <div class="package__onwards">onwards</div>
+    <div class="package__detail">15 edited images</div>
+  </div>
+  <div class="package">
+    <div class="package__name">Extended</div>
+    <div class="package__price">$350</div>
+    <div class="package__onwards">onwards</div>
+    <div class="package__detail">30–40 edited images</div>
+  </div>
+</div>
+
+<p class="packages__note"><em>Available for individual portraits, couples, friends, and creative shoots.</em></p>
+
+<h3>Event Photography — $350 onwards</h3>
+
+<p>For birthdays, graduations, private gatherings, engagement celebrations, and other events.</p>
 
 <details class="collapsible">
   <summary><strong>Booking info</strong></summary>
   <b>Booking Fee (Deposit)</b> <br>
   A 25% deposit is required to secure the booking. This covers the initial cost of renting equipment, set up, etc. If the shoot is cancelled up to 48 hours before the scheduled date, the deposit will be refunded. The remaining balance must be paid in full on the day of the shoot. The photos will not be sent until the full amount is received. <br>
   <br>
-  <b>Rescheduling</b> <br>
-  For outdoor shoots, if the weather is too poor to shoot safely, we will reschedule at no extra cost. For general client reschedules, please give at least 48 hours' notice. Cancellations or reschedules made after this window will result in the loss of your deposit. A new 25% deposit will be required to book another date. <br>
+  <b>Rescheduling or Cancellation</b> <br>
+  For outdoor shoots, if the weather is too poor to shoot safely, we will reschedule at no extra cost. For general reschedules, please give at least 48 hours' notice. Cancellations or reschedules made after this window will result in the loss of your deposit. A new 25% deposit will be required to book another date. <br>
   <br>
   <b>Studio Shoots</b> <br>
   If you prefer an indoor setting, you can cover the rental cost of your chosen space and equipment. The photoshoot package price remains the same. <br>
@@ -81,12 +72,11 @@ author_profile: true
 
 </details>
 
-<h2>Enquire about a booking</h2>
+<h2>Interested in a shoot?</h2>
 
 <p>
-  Fill this in and press <strong>Prepare email</strong>. It opens your own email app with
-  everything filled in — check it over, then press send. Nothing is submitted to this
-  website, and no third-party service sees your details.
+  Every shoot is different. Get in touch to discuss your ideas, the occasion, and what you're looking for, and I'll give you a quote based on your requirements.
+  Fill this form and click <strong>Prepare email</strong>. 
 </p>
 
 <form id="booking-form">
@@ -100,11 +90,16 @@ author_profile: true
     <select id="bk-type" name="shoot_type" required>
       <option value="">Please choose…</option>
       <option>Portrait</option>
+      <option>Creative</option>
       <option>Event</option>
       <option>Wedding</option>
-      <option>Product</option>
       <option>Something else</option>
     </select>
+  </p>
+
+  <p id="bk-other-wrap" hidden>
+    <label for="bk-other">What kind of shoot did you have in mind? <span aria-hidden="true">*</span></label><br>
+    <input type="text" id="bk-other" name="shoot_other">
   </p>
 
   <p>
@@ -140,6 +135,19 @@ author_profile: true
     var form = document.getElementById('booking-form');
     if (!form) { return; }
 
+    /* Show the follow-up question only for "Something else", and only require it then. */
+    var typeSelect = document.getElementById('bk-type');
+    var otherWrap = document.getElementById('bk-other-wrap');
+    var otherInput = document.getElementById('bk-other');
+    function syncOther() {
+      var isOther = typeSelect.value === 'Something else';
+      otherWrap.hidden = !isOther;
+      otherInput.required = isOther;
+      if (!isOther) { otherInput.value = ''; }
+    }
+    typeSelect.addEventListener('change', syncOther);
+    syncOther();
+
     form.addEventListener('submit', function (event) {
       /* NOTE: Jekyll's `compress` layout collapses this page onto a single line, so a
          "//" comment would comment out the rest of the script. Block comments only. */
@@ -152,6 +160,7 @@ author_profile: true
       }
 
       var shootType = field('shoot_type');
+      if (shootType === 'Something else') { shootType = 'Something else: ' + field('shoot_other'); }
       var body = [
         'Name: ' + field('name'),
         'Shoot type: ' + shootType,
