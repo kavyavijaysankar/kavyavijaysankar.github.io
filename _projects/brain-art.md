@@ -26,7 +26,7 @@ Every doctor's office has one thing in common: little anatomical models of their
 That's when I decided to start collecting scans of my own brain. I'm a computational neuroscientist, I work with brain data, it makes sense that I would have EEGs, MEGs, MRIs, CT scans, PET scans, and more. The eventual plan is to turn each of them into a visual and frame them on a wall — my very own ***Wall of Frame*** (humour me).
 Since then, I've gotten an EEG and a structural MRI. I contributed to research studies in my university by collecting them.
 
-I had worked with EEG data before getting my own EEG, but never with MRI data. So naturally I was very excited to experiment with my new MRI. In MATLAB, I made images of my sagittal, coronal and axial midline (these are directly going on my Wall of Frame). This gave me the perfect excuse to start learing FSL and FreeSurfer. With a bit more meddling and playing around with the MRI and EEG, I made this below (right) visual.
+I had worked with EEG data before getting my own EEG, but never with MRI data. So naturally I was very excited to experiment with my new MRI. In MATLAB, I made images of my sagittal, coronal and axial midline (these are directly going on my Wall of Frame). This gave me the perfect excuse to start learning FSL and FreeSurfer. With a bit more meddling and playing around with the MRI and EEG, I made this below (right) visual.
 
 ![Sagittal midline of my brain](/images/brain%20art%20sagittal%20midline.png){: width="500"}
 

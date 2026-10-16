@@ -17,7 +17,9 @@ Education
 Work experience
 ======
 * Research Intern - Rogue42 (Summer 2025)
-  * Built a web tool to identify users’ cognitive & behaviour patterns and recommend interventions based on their procrastination profile and cognitive fingerprint.
+  * Designed and implemented a study evaluating how cognitive function influences procrastination in young adults. 
+  * Classified procrastination patterns based on work and behavioral data.
+  * Developed a chatbot-based assessment to identify users' cognitive patterns and recommend interventions based on their procrastination patterns.
   
 Publications
 ======
