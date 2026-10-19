@@ -35,8 +35,8 @@ Skills
 
 * Python (NumPy, SciPy, pandas, Matplotlib)
 * Machine learning: scikit-learn
-* Neural data: MNE-Python, NiBabel, scikit-fda, fdasrsf
-* MATLAB (Signal Processing Toolbox, Image Processing & Computer Vision Toolbox, EEGLAB)
+* Neural data: MNE-Python, scikit-fda, fdasrsf
+* MATLAB (Signal Processing Toolbox, Image Processing & Computer Vision Toolbox)
 * Tools: Git, Jupyter
 
 </details>
@@ -46,7 +46,6 @@ Skills
 
 * Spike-train analysis (interspike intervals, Fano factor, Poisson models)
 * Stimulus reconstruction from spike trains
-* Linear-Nonlinear-Poisson (LNP) and GLM fitting of neural responses
 * Spike train discrimination and signal detection (ROC analysis)
 * Population decoding (population vector and Bayesian decoders)
 * Fisher information and tuning curve analysis
@@ -74,7 +73,6 @@ Skills
 * Structural MRI preprocessing with FSL (BET, FAST, FLIRT)
 * Brain extraction and tissue segmentation
 * Image registration to standard space
-* Morphometric analysis (volumetry, cortical thickness)
 
 </details>
 
@@ -105,7 +103,7 @@ Skills
 
 * Supervised learning (regression, random forests, XGBoost, SVMs)
 * Unsupervised learning and clustering
-* Dimensionality reduction (PCA, ICA)
+* Dimensionality reduction
 * Deep learning (CNNs)
 * Computer vision (semantic segmentation, stereo vision, pose estimation)
 * Reinforcement learning and Markov decision processes
